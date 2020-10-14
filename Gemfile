@@ -11,5 +11,3 @@ gem "sqlite3", "~> 1.4"
 gem "sinatra", "~> 2.1"
 
 gem "sinatra-contrib", "~> 2.1"
-
-gem "haml", "~> 5.2"
