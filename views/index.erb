@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digimons</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background: rgb(255, 202, 48);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 202, 48, 1) 23%,
+          rgba(255, 0, 123, 1) 79%
+        );
+      }
+      .rose {
+        color: #ff007b;
+      }
+    </style>
+  </head>
+  <body class="">
+    <div class="jumbotron bg-transparent">
+      <div class="container">
+        <h1 class="mb-5 mt-5 text-center text-white text-uppercase">
+          Digimons on <span class="font-weight-light">fire</span>
+        </h1>
+        <div class="row">
+          <% @digimons.each do |digimon| %>
+          <div class="col col-sm-3 mb-4">
+            <div class="card rounded align-items-center shadow">
+              <div class="card-body text-center">
+                <img
+                  src="<%=digimon["img"]%>"
+                  width="180"
+                  height="auto"
+                  class="img img-fluid"
+                />
+                <h5 class="card-title mt-3 rose"><%=digimon["name"]%></h5>
+                <span class="text-sm">Level: </span>
+                <strong><%=digimon["level"]%></strong>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <div class="float-right">
+          <nav aria-label="...">
+            <ul class="pagination pagination-lg">
+              <li class="page-item <%= @page < 2? 'disabled' : '' %>">
+                <a class="page-link" href="?page=<%= @page-1 %>">Anterior</a>
+              </li>
+              <li class="page-item  <%= @page <= @total? 'disabled' : '' %>"">
+                <a class="page-link" href="?page=<%= @page+1 %>">Próxima</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
