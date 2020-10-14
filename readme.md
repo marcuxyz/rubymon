@@ -3,7 +3,7 @@
 Primeiro faça um clonse
 
 ```bash
-git@github.com:marcuxyz/rubymon.git
+git clone git@github.com:marcuxyz/rubymon.git
 ```
 
 Ou usando o gh
