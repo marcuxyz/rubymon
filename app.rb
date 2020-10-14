@@ -9,7 +9,7 @@ get '/' do
   limit = 20 
   count = db.execute("SELECT COUNT(*) as total FROM digimons;")
   
-  @page = params[:page].to_i || 1
+  @page = (params[:page] || 1).to_i
   @digimons = db.execute "SELECT * FROM digimons LIMIT ? OFFSET ?", limit, limit * @page
   @total = count.first["total"] / limit
 

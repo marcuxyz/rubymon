@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta author="Marcus Pereira">
+    <meta description="Digimon applicaton">
     <title>Digimons</title>
     <link
       rel="stylesheet"
@@ -26,10 +28,11 @@
   <body class="">
     <div class="jumbotron bg-transparent">
       <div class="container">
-        <h1 class="mb-5 mt-5 text-center text-white text-uppercase">
+        <h1 class="mt-5 text-center text-white text-uppercase">
           Digimons on <span class="font-weight-light">fire</span>
         </h1>
-        <div class="row">
+        <h5 class="text-center text-white font-weight-light">By Marcus Pereira</h5>
+        <div class="row mt-5">
           <% @digimons.each do |digimon| %>
           <div class="col col-sm-3 mb-4">
             <div class="card rounded align-items-center shadow">
@@ -54,7 +57,7 @@
               <li class="page-item <%= @page < 2? 'disabled' : '' %>">
                 <a class="page-link" href="?page=<%= @page-1 %>">Anterior</a>
               </li>
-              <li class="page-item  <%= @page <= @total? 'disabled' : '' %>"">
+              <li class="page-item  <%= @page >= @total? 'disabled' : '' %>"">
                 <a class="page-link" href="?page=<%= @page+1 %>">Próxima</a>
               </li>
             </ul>
